@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>Hexo折腾笔记 - Somewhere</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="null">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="qReymNBKZh-_OSv4iE8HWdCSFeSEBeDP1znAXuYZ6cU" />
+
+
+    <!-- Site Verification -->
+    <meta name="baidu-site-verification" content="vYxeMXhWdy" />
+
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210110015014.webp" type="image/webp" />
+  <meta name="description" content="简单记录一下折腾Hexo的经历">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo折腾笔记">
+<meta property="og:url" content="https://blog.hitachimako.top/2021/hexo-fucking-diary/">
+<meta property="og:site_name" content="Somewhere">
+<meta property="og:description" content="简单记录一下折腾Hexo的经历">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108194055.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108200308.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108200318.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108222032.png">
+<meta property="article:published_time" content="2021-01-08T04:28:49.000Z">
+<meta property="article:modified_time" content="2021-01-09T17:46:13.174Z">
+<meta property="article:author" content=".torrent">
+<meta property="article:tag" content="原创">
+<meta property="article:tag" content="网络">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108194055.png">
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+     
+    
+  
+
+  
+    
+     
+    
+  
+
+  
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/mdui@1.0.1/dist/css/mdui.min.css,npm/highlight.js@10.5.0/styles/darcula.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" crossorigin>
+  
+
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css" crossorigin>
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1658687_idvsg6t2whp.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1610215051420">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Somewhere" type="application/atom+xml">
+</head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210109012311.webp)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title=".torrent" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210109012241.webp" alt=".torrent"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title=".torrent">
+            <img src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210109012241.webp" alt=".torrent" alt=".torrent">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>3</div>
+        <div><span>标签</span>5</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://www.google.com/search?q=blog.hitachimako.top" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://github.com/dogtorrent/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-gh"></i>
+        </a><a class="mdui-ripple" href="https://weibo.com/u/5876138569" target="_blank" mdui-tooltip="{content: '微博'}" style="color: rgb(247, 132, 34);background-color: rgba(247, 132, 34, .15);">
+            <i class="nexmoefont icon-weibo"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/9333469" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://blog.hitachimako.top/atom" target="_blank" mdui-tooltip="{content: '订阅'}" style="color: rgb(247, 132, 34);background-color: rgba(247, 132, 34, .15);">
+            <i class="nexmoefont icon-rss"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Minecraft/" style="font-size: 15px;">Minecraft</a> <a href="/tags/Zerotier/" style="font-size: 10px;">Zerotier</a> <a href="/tags/%E5%8E%9F%E5%88%9B/" style="font-size: 20px;">原创</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 20px;">网络</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+</aside>
+    <div class="nexmoe-author-copyright">
+        &copy; 2021 .torrent
+    </div>
+    <div class="nexmoe-copyright">
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/dogtorrent/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 56.25%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108184638.webp" data-sizes="auto" alt="Hexo折腾笔记" class="lazyload">
+          <h1>Hexo折腾笔记</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年01月08日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.4k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 7 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Hexo折腾笔记</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%92%BB%E6%B8%B2%E6%9F%93%E5%99%A8"><span class="toc-number">1.1.</span> <span class="toc-text">💻渲染器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Options"><span class="toc-number">1.1.1.</span> <span class="toc-text">Options</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E4%BB%B6"><span class="toc-number">1.1.2.</span> <span class="toc-text">插件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#checkbox-check-lists-todo-list%E7%9A%84%E6%94%AF%E6%8C%81"><span class="toc-number">1.1.2.1.</span> <span class="toc-text">checkbox&#x2F;check lists&#x2F;todo list的支持</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%F0%9F%8E%84%E4%B8%BB%E9%A2%98"><span class="toc-number">1.2.</span> <span class="toc-text">🎄主题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#nexmoe"><span class="toc-number">1.2.1.</span> <span class="toc-text">nexmoe</span></a></li></ol></li></ol></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <h1>Hexo折腾笔记</h1>
+<h2 id="💻渲染器">💻渲染器</h2>
+<p>其实主要也就三种，自带的 hexo-renderer-marked，插件丰富的 hexo-renderer-markdown-it，还有自定义选项的文档写得特别好的 hexo-renderer-showdown</p>
+<p>自带的以前对gfm支持不太行（现在不知道咋样了），marked本身也不太优雅，所以换用 markdown-it，乱七八糟的插件也多，就很舒服。</p>
+<p>那么为什么不用 showdown 呢？</p>
+<p><s>因为它直接报错啊</s></p>
+<h3 id="Options">Options</h3>
+<p>三种引擎的一些选项（在_config.yml内），以防以后用得到，懒得再查文档，先直接xjb粘贴：</p>
+<pre><code class="language-yaml"># hexo-renderer-marked config
+# see https://marked.js.org/using_advanced#options
+marked:
+  gfm: true #  Enables GitHub flavored markdown
+  pedantic: false # Conform to obscure parts of `markdown.pl` as much as possible. Don't fix any of the original markdown bugs or poor behavior.
+  breaks: true # Enable GFM line breaks. This option requires the `gfm` option to be true.
+  smartLists: true # Use smarter list behavior than the original markdown.
+  smartypants: true # Use &quot;smart&quot; typograhic punctuation for things like quotes and dashes.
+  modifyAnchors: 0 # Transform the anchorIds into lower case (`1`) or upper case (`2`).
+  autolink: true # Enable autolink for URLs. E.g. `https://hexo.io` will become `&lt;a href=&quot;https://hexo.io&quot;&gt;https://hexo.io&lt;/a&gt;`.
+  sanitizeUrl: false # Remove URLs that start with `javascript:`, `vbscript:` and `data:`.
+  headerIds: true # Insert header id, e.g. `&lt;h1 id=&quot;value&quot;&gt;text&lt;/h1&gt;`. Useful for inserting anchor link to each paragraph with a heading.
+  prependRoot: false # Prepend root value to (internal) image path. 
+                     ##     Example `_config.yml`:
+                     ###                          `root: /blog/`
+                     ##     ![text](/path/to/image.jpg) becomes &lt;img src=&quot;/blog/path/to/image.jpg&quot; alt=&quot;text&quot;&gt;
+  external_link: # 
+    enable: true # Open external links in a new tab.
+    exclude: [] # Exclude hostname. Specify subdomain when applicable, including `www`. 
+                ##      Example:`[foo](http://bar.com) becomes &lt;a href=&quot;http://bar.com&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;foo&lt;/a&gt;`
+    nofollow: true # Add rel=&quot;noopener external nofollow noreferrer&quot; to all external links for security, privacy and SEO.
+                    # This can be enabled regardless of `external_link.enable`
+                    ##      Example: `[foo](http://bar.com)` becomes `&lt;a href=&quot;http://bar.com&quot; rel=&quot;noopener external nofollow noreferrer&quot;&gt;foo&lt;/a&gt;`
+
+</code></pre>
+<pre><code class="language-yaml"># hexo-renderer-markdown-it config
+markdown:
+  preset: 'default'
+  render:
+    html: true # Whether or not HTML content inside the document should be escaped or passed to the final result.
+    xhtmlOut: false # Whether the parser will export fully XHTML compatible tags. This only needs to be true for complete [CommonMark] support.
+    langPrefix: 'language-'
+    breaks: true # Whether the parser will produces `&lt;br&gt;` tags every time there is a line break in the source document.
+    linkify: false # Whether the parser will returns text links as proper links inlined with the paragraph.
+    typographer: true # Whether enables the substitution for common typography elements like ©, curly quotes, dashes, etc.
+    quotes: '“”‘’' # &quot;double&quot; will be turned into “double”, 'single' will be turned into ‘single’
+  enable_rules:
+  disable_rules:
+  plugins:
+    - name: 'markdown-it-task-checkbox' # checkbox插件
+      options:
+        liClass: task-checkbox-list-item # 用于CSS选择
+    - name: 'markdown-it-emoji' # 使用emoji表情
+# Automatic Headline ID's
+# Enables you to automatically create ID's for the headings so you can link back to them. 
+# A valid html document cannot have two elements with duplicate id value, 
+# for example if title id is already used, 
+# subsequent title values will be updated to title-2, title-3 and so on.
+  anchors:
+    level: 2 # Minimum level for ID creation. (Ex. h2 to h6)
+    collisionSuffix: '' # A suffix that is prepended to the number given if the ID is repeated.
+    permalink: false # If `true`, creates an anchor tag with a permalink besides the heading.
+    permalinkClass: 'header-anchor' # Class used for the permalink anchor tag.
+    permalinkSide: 'left' # Set to 'right' to add permalink after heading
+    permalinkSymbol: '¶' # The symbol used to make the permalink
+    case: 0 # Transform anchor to (1) lower case; (2) upper case
+    separator: '-' # Replace space with a character
+</code></pre>
+<pre><code class="language-yaml"># hexo-renderer-showdown config
+# see https://github.com/showdownjs/showdown/wiki/Showdown-Options#valid-options
+markdown:
+  &quot;[tasklists**]&quot;: true # 注：key值内有*号，不清楚hexo是如何解析的，可能并不需要&quot;[]&quot;包裹
+</code></pre>
+<p>markdown-it 最好还得附带装上两插件，一个是 markdown-it-task-checkbox，一个是 markdown-it-emoji，npm库里都有，直接装就完事。</p>
+<h3 id="插件">插件</h3>
+<h4 id="checkbox-check-lists-todo-list的支持">checkbox/check lists/todo list的支持</h4>
+<p>其实也就是 <code>- [ ]</code> 或者 <code>- [x]</code></p>
+<p>marked将gfm设为true后即可支持，而markdown-it需要安装插件并启用才能支持。一般用的是 <a target="_blank" rel="noopener" href="https://github.com/mcecot/markdown-it-checkbox">markdown-it-checkbox</a> 或者 <a target="_blank" rel="noopener" href="https://github.com/revin/markdown-it-task-lists">markdown-it-task-lists</a>，前者比较正常，后者很蛋疼的把 <code>- [ ]</code> 和 <code>- [x]</code> 换成了 <code>[ ]</code> 和 <code>[x]</code> ，<s>和 hexo-asset-image 有着异曲同工之妙</s>。</p>
+<p>但是无论是 marked 开启 gfm 还是 markeddown-it 加插件，渲染出来的样式都会在复选框前加一个点（根据浏览器不同渲染样式也不一样），略微蛋疼。</p>
+<p>翻了一通没找到什么好使的插件，干脆曲线救国，找了个叫 <a target="_blank" rel="noopener" href="https://github.com/mcecot/markdown-it-checkbox">markdown-it-task-checkbox</a> 的插件，它相比 markdown-it-checkbox 有多那么几个可以设置的选项，方便折腾，就不需要动它的源码了。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108194055.png" alt="Screenshot_2021-01-08 linsir markdown-it-task-checkbox" class="lazyload"></p>
+<p>接下来自然就是人民群众喜闻乐见的曲线救国环节：</p>
+<p>在plugins内添加插件，然后修改生成的列表项的class，因为担心可能和其他冲突，导致那些没有 checkbox 的无序列表也失去小圆点，所以不使用原来的默认值 <code>task-list-item</code>，而是改成 <code>task-checkbox-list-item</code>，同理 <code>task-list</code> 也一并改成 <code>task-checkbox-list</code></p>
+<pre><code class="language-yaml">plugins:
+    - name: 'markdown-it-task-checkbox' # checkbox插件
+      options:
+        ulClass: task-checkbox-list # 用于CSS选择
+        liClass: task-checkbox-list-item # 用于CSS选择
+</code></pre>
+<p>列表转成html后大概这样：</p>
+<pre><code class="language-html">&lt;ul class=&quot;task-checkbox-list&quot;&gt;
+    &lt;li class=&quot;task-checkbox-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; id=&quot;cbx_0&quot; checked=&quot;true&quot; disabled=&quot;true&quot;&gt;&lt;label for=&quot;cbx_0&quot;&gt; 测试文字&lt;/label&gt;&lt;/li&gt;
+    &lt;li class=&quot;task-checkbox-list-item&quot;&gt;&lt;input type=&quot;checkbox&quot; id=&quot;cbx_1&quot; disabled=&quot;true&quot;&gt;&lt;label for=&quot;cbx_1&quot;&gt; 测试文字2&lt;/label&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+<p>然后再改一下主题的样式文件（source/css/style.styl），把 task-checkbox-list-item 类的样式改掉：</p>
+<pre><code class="language-css">.task-checkbox-list-item &#123;
+    list-style: none;
+&#125;
+</code></pre>
+<p>修改前<img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108200308.png" alt="bfr" class="lazyload"><br>
+修改后<img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108200318.png" alt="aft" class="lazyload"></p>
+<p>发现圆点虽然不见了，但是还是占了位置，于是再暴力一回，让它缩回去：</p>
+<pre><code class="language-css">.task-checkbox-list &#123;
+    /* 原本继承的值为 0 0 0 2em */
+    padding: 0 0 0 1em;
+&#125;
+</code></pre>
+<p>修改后<img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108222032.png" alt="aft2" class="lazyload"></p>
+<h2 id="🎄主题">🎄主题</h2>
+<h3 id="nexmoe">nexmoe</h3>
+<p>原版：<a target="_blank" rel="noopener" href="https://github.com/theme-nexmoe/hexo-theme-nexmoe">theme-nexmoe/hexo-theme-nexmoe</a></p>
+<p>修改版：<a target="_blank" rel="noopener" href="https://github.com/DogTorrent/hexo-theme-nexmoe">DogTorrent/hexo-theme-nexmoe</a></p>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>.torrent<br>
+    <strong>本文链接：</strong><a href="https://blog.hitachimako.top/2021/hexo-fucking-diary/" title="https:&#x2F;&#x2F;blog.hitachimako.top&#x2F;2021&#x2F;hexo-fucking-diary&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;blog.hitachimako.top&#x2F;2021&#x2F;hexo-fucking-diary&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Hexo/" rel="tag">Hexo</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%8E%9F%E5%88%9B/" rel="tag">原创</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: 'YPgrWJ5taYQIc69lmg8jLT75-MdYXbMMI',
+        appKey: 'jmBDA49ahV41d4Mv9prfzSWY',
+		placeholder: '此处留言~ 填写邮箱可以接收回复提醒',
+		visitor: 'false',
+		verify: 'true',
+		recordIP: 'false',
+        requiredFields: 'nick,mail'.split(',')
+    })
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  
+
+
+  
+    
+  
+
+
+
+  
+    
+  
+
+
+
+  
+    
+  
+
+
+
+  
+    
+  
+
+
+
+  
+    
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/mdui@1.0.1/dist/js/mdui.min.js,gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js,npm/lazysizes@5.3.0/lazysizes.min.js,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+  <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+<script src="/js/app.js?v=1610215051429"></script>
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>

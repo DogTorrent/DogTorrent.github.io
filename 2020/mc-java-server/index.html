@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>Minecraft JAVA版服务器建设 - Somewhere</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="null">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="qReymNBKZh-_OSv4iE8HWdCSFeSEBeDP1znAXuYZ6cU" />
+
+
+    <!-- Site Verification -->
+    <meta name="baidu-site-verification" content="vYxeMXhWdy" />
+
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210110015014.webp" type="image/webp" />
+  <meta name="description" content="简单记录一下MC服务器的搭建过程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Minecraft JAVA版服务器建设">
+<meta property="og:url" content="https://blog.hitachimako.top/2020/mc-java-server/">
+<meta property="og:site_name" content="Somewhere">
+<meta property="og:description" content="简单记录一下MC服务器的搭建过程">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183715.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183732.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183745.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183946.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183955.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108184008.webp">
+<meta property="article:published_time" content="2020-02-27T04:05:25.000Z">
+<meta property="article:modified_time" content="2021-01-08T11:32:45.467Z">
+<meta property="article:author" content=".torrent">
+<meta property="article:tag" content="原创">
+<meta property="article:tag" content="网络">
+<meta property="article:tag" content="Minecraft">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183715.webp">
+
+  
+
+  
+    
+      
+    
+  
+
+  
+    
+     
+    
+  
+
+  
+    
+     
+    
+  
+
+  
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/mdui@1.0.1/dist/css/mdui.min.css,npm/highlight.js@10.5.0/styles/darcula.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" crossorigin>
+  
+
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css" crossorigin>
+  
+    <link rel="stylesheet" href="//at.alicdn.com/t/font_1658687_idvsg6t2whp.css">
+  
+  <link rel="stylesheet" href="/css/style.css?v=1610215051432">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Somewhere" type="application/atom+xml">
+</head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210109012311.webp)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title=".torrent" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210109012241.webp" alt=".torrent"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title=".torrent">
+            <img src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210109012241.webp" alt=".torrent" alt=".torrent">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>3</div>
+        <div><span>标签</span>5</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                回到首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                文章归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about" title="关于博客">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于博客
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY" title="我的朋友">
+            <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
+            <div class="mdui-list-item-content">
+                我的朋友
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://www.google.com/search?q=blog.hitachimako.top" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://github.com/dogtorrent/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-gh"></i>
+        </a><a class="mdui-ripple" href="https://weibo.com/u/5876138569" target="_blank" mdui-tooltip="{content: '微博'}" style="color: rgb(247, 132, 34);background-color: rgba(247, 132, 34, .15);">
+            <i class="nexmoefont icon-weibo"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/9333469" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://blog.hitachimako.top/atom" target="_blank" mdui-tooltip="{content: '订阅'}" style="color: rgb(247, 132, 34);background-color: rgba(247, 132, 34, .15);">
+            <i class="nexmoefont icon-rss"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Minecraft/" style="font-size: 15px;">Minecraft</a> <a href="/tags/Zerotier/" style="font-size: 10px;">Zerotier</a> <a href="/tags/%E5%8E%9F%E5%88%9B/" style="font-size: 20px;">原创</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 20px;">网络</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">文章归档</h3>
+    <div class="nexmoe-widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/">2021</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/">2020</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/">2019</a><span class="archive-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+<style>
+.nexmoe-widget .archive-list-count{
+	position : absolute;
+	right: 15px;
+	top:9px;
+	color: #DDD;
+}
+</style>
+
+  
+</aside>
+    <div class="nexmoe-author-copyright">
+        &copy; 2021 .torrent
+    </div>
+    <div class="nexmoe-copyright">
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/dogtorrent/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 56.22254758418741%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108184603.webp" data-sizes="auto" alt="Minecraft JAVA版服务器建设" class="lazyload">
+          <h1>Minecraft JAVA版服务器建设</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2020年02月27日</a>
+    <a><i class="nexmoefont icon-areachart"></i>2.3k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 10 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">Minecraft JAVA版服务器建设</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%B6%E9%97%B4%E7%BA%BF"><span class="toc-number">1.1.</span> <span class="toc-text">时间线</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#2019-12-19-%E5%88%9D%E4%BB%A3"><span class="toc-number">1.1.1.</span> <span class="toc-text">2019&#x2F;12&#x2F;19 初代</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-01-13-%E4%BA%8C%E4%BB%A3%E7%9B%AE"><span class="toc-number">1.1.2.</span> <span class="toc-text">2020&#x2F;01&#x2F;13 二代目</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2020-02-15-%E4%B8%89%E4%BB%A3%E7%9B%AE"><span class="toc-number">1.1.3.</span> <span class="toc-text">2020&#x2F;02&#x2F;15 三代目</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%89%8B%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">动手过程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%AD%E4%B9%B0%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">1.2.1.</span> <span class="toc-text">购买云服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-number">1.2.2.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%BC%8F%E6%90%AD%E5%BB%BA"><span class="toc-number">1.2.3.</span> <span class="toc-text">正式搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91-%E6%89%93%E9%80%9A%E5%86%85%E7%BD%91"><span class="toc-number">1.2.4.</span> <span class="toc-text">端口转发-打通内网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%8F%E6%8F%92%E6%9B%B2-%E7%BD%91%E6%AE%B5%E5%86%B2%E7%AA%81"><span class="toc-number">1.2.5.</span> <span class="toc-text">小插曲-网段冲突</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91-%E9%85%8D%E7%BD%AE%E8%BD%AC%E5%8F%91"><span class="toc-number">1.2.6.</span> <span class="toc-text">端口转发-配置转发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BC%98%E5%8C%96"><span class="toc-number">1.2.7.</span> <span class="toc-text">服务器优化</span></a></li></ol></li></ol></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <h1>Minecraft JAVA版服务器建设</h1>
+<h2 id="时间线">时间线</h2>
+<p>朋友看了TIS的视频心潮澎湃，打算拉着我和几个小伙伴开个Minecraft服务器玩玩，于是有了这个计划；</p>
+<p>一开始打算采用Zerotier建立虚拟局域网连接，详见 <a href="/2019/mc-zerotier">利用Zerotier进行Minecraft联机</a> ，但无奈对方校园网络环境太差，NAT层层套娃，体验极其差，最终只得选择云服务器进行搭建。</p>
+<h3 id="2019-12-19-初代">2019/12/19 初代</h3>
+<p><strong>阿里云学生机 X2</strong><br>
+<strong>具体配置</strong>：1核2G1M（自然是Mbps），9元/月，一台开服一台转发流量缓解带宽压力<br>
+<strong>初代人数</strong>：6人<br>
+<strong>服务器核心</strong>：原版1.14.4<br>
+<strong>体验</strong>：极差</p>
+<h3 id="2020-01-13-二代目">2020/01/13 二代目</h3>
+<p><strong>百度云服务器 X3</strong><br>
+<strong>具体配置</strong>：乘着年终采购活动买到了1折的云服务器，分别为<br>
+2核4G1M，238元/年<br>
+1核2G2M，151元/年<br>
+1核1G1M，84元/年<br>
+一台开服，另外两台作转发缓解带宽压力<br>
+<strong>二代目人数</strong>：9人<br>
+<strong>服务器核心</strong>：Spigot1.14.4<br>
+<strong>体验</strong>：一般</p>
+<h3 id="2020-02-15-三代目">2020/02/15 三代目</h3>
+<p><strong>阿里云服务器 X7</strong><br>
+<strong>具体配置</strong>：因疫情肆虐，阿里助力上云，白嫖6个月ECS（可免费延期至1年），发动小伙伴一人一台。2核4G1M带宽，1台开服，剩下全作转发缓解带宽压力<br>
+<strong>三代目人数</strong>：11人<br>
+<strong>服务器核心</strong>：PaperSpigot1.14.4<br>
+<strong>体验</strong>：一般</p>
+<h2 id="动手过程">动手过程</h2>
+<p>这里以阿里云ECS为例，百度云配置方式太过傻瓜</p>
+<h3 id="购买云服务器">购买云服务器</h3>
+<ol>
+<li>注册登录阿里云/百度云，进行实名认证(和学生认证)；</li>
+<li>购买(白嫖)2核4G的云服务器，年末年初优惠力度较大。选择地域杭州，操作系统Centos7.5，其他默认；</li>
+<li>初始化，设置密码(<s>一开始忘记设置，死活登录不上</s>)；</li>
+<li>安全组规则修改，放行25565端口(MC默认端口，没打算改)入站流量；<br>
+<img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183715.webp" alt="安全组规则" class="lazyload"></li>
+<li>安装Xshell&amp;Xftp软件，连接云服务器；</li>
+</ol>
+<h3 id="准备工作">准备工作</h3>
+<ol>
+<li>
+<p>安装 <a href="http://www.gnu.org/software/screen/" target="_blank" rel="noopener noreferrer">screen</a>；</p>
+<pre><code class="language-shell">[root@blablabla ~]# yum -y install screen
+</code></pre>
+<p>Note：screen 可以保持本地和服务器断开后，程序继续在服务器上运行，防止退出shell会话后mc服务端进程自动结束。</p>
+</li>
+<li>
+<p>安装 <a href="https://www.java.com/zh_CN/" target="_blank" rel="noopener noreferrer">Java</a>；</p>
+<pre><code class="language-shell">[root@blablabla ~]# yum -y install java-1.8.0-openjdk
+</code></pre>
+</li>
+<li>
+<p>由于服务器网络原因，本地下载Minecraft原版服务器端，用xftp丢进云服务器里；</p>
+</li>
+<li>
+<p>添加新用户minecraftserver(其实只是搭建私人小服的话不添加直接用root账户也可以)；</p>
+<pre><code class="language-shell">[root@blablabla ~]# adduser minecraftserver
+</code></pre>
+</li>
+<li>
+<p>设置密码；</p>
+<pre><code class="language-shell">[root@blablabla ~]# passwd minecraftserver
+</code></pre>
+</li>
+</ol>
+<h3 id="正式搭建">正式搭建</h3>
+<ol>
+<li>
+<p>由于服务器网络原因，在本地下载完<strong>服务端</strong>再用Xftp丢进服务器。<br>
+<strong>Mojang原版</strong><br>
+下载链接可以在 <a href="https://minecraft-zh.gamepedia.com/" target="_blank" rel="noopener noreferrer">中文Minecraft WiKi</a> 内找到(Gamepedia速度过慢可以换用部署在Bilibili的 <a href="https://wiki.biligame.com/mc/Minecraft_Wiki" target="_blank" rel="noopener noreferrer">中文Minecraft WiKi 镜像站</a> )<br>
+单独版本的WiKi地址：https://wiki.biligame.com/mc/版本号<br>
+比如1.14.4就为：https://wiki.biligame.com/mc/1.14.4<br>
+<strong>Spigot</strong><br>
+官网：https://spigotmc.org<br>
+下载地址：https://hub.spigotmc.org/jenkins/job/BuildTools/<br>
+<strong>PaperSpigot</strong><br>
+官网：https://papermc.io<br>
+Github：https://github.com/PaperMC/Paper<br>
+下载地址：https://papermc.io/downloads</p>
+</li>
+<li>
+<p>如果是原版，直接打开Xftp，连接服务器，进入新建用户minecraftserver的目录 <code>/home/minecraftserver/</code> ，把下载下来的文件 <code>server.jar</code> 丢进去；<br>
+如果是Spigot/Paperspigot，下载下来的是 <code>buildtools.jar</code> 或 <code>paper.jar</code> ，要先进行本地构建：</p>
+<pre><code class="language-shell">java -jar xxx.jar
+</code></pre>
+<p>构建完后把构建好的jar改个名字，改为 <code>server.jar</code> ，和原版一样丢进服务器。</p>
+</li>
+<li>
+<p>服务器同目录下新建脚本 <code>start.sh</code> ，填写如下的<s>玄学</s>内容：</p>
+<pre><code class="language-shell">#!/bin/sh  
+screen -dmS mc java -Xms2G -Xmx2G -XX:+AggressiveOpts -XX:+UseCompressedOops -jar /home/minecraftserver/server.jar
+</code></pre>
+<p>Note 1：<a href="https://www.runoob.com/linux/linux-comm-screen.html" target="_blank" rel="noopener noreferrer">关于screen</a></p>
+<p>Note 2：-Xms初始内存    -Xms最大内存    -XX:+AggressiveOpts引入实验性的优化    -XX:+UseCompressedOops压缩指针</p>
+</li>
+<li>
+<p>如果是在Windows下编辑，需要确保文档格式为Unix：<br>
+Notepad++修改文档格式： <code>编辑 -&gt; 文档格式转换 -&gt; 转为Unix (LF)</code><br>
+Vim修改文档格式：</p>
+<pre><code class="language-shell">cd /home/minecraftserver
+vim start.sh
+</code></pre>
+<p>进入修改界面，键入 <code>:set ff</code>  ，最底下显示</p>
+<pre><code class="language-shell">fileformat=unix  
+</code></pre>
+<p>则正常，若显示</p>
+<pre><code class="language-shell">fileformat=dos
+</code></pre>
+<p>则需要进一步输入 <code>:set ff=unix</code> ,完事后再输入 <code>:set ff</code> 确认文档格式已为Unix，最后 <code>:wq</code> 保存退出；</p>
+<p>Note：<a href="https://www.runoob.com/linux/linux-vim.html" target="_blank" rel="noopener noreferrer">关于Vim</a></p>
+</li>
+<li>
+<p>第一次启动，用用户minecraftserver登入，运行刚刚整好的脚本：</p>
+<pre><code class="language-shell">cd /home/minecraftserver
+./start.sh
+</code></pre>
+</li>
+<li>
+<p>第一次会报错，同目录下找到eula.txt并修改 <code>eula=false</code> 为 <code>eula=true</code> ；又为了允许盗版玩家加入，找到server.properties并修改 <code>online-mode=true</code> 为 <code>online-mode=false</code> ，完事后重新启动；</p>
+</li>
+<li>
+<p>作为一个盗版玩家心怀惭愧和感激，加入游戏。</p>
+</li>
+</ol>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183732.webp" alt="EULA" class="lazyload"></p>
+<h3 id="端口转发-打通内网">端口转发-打通内网</h3>
+<p>单个云服务器的带宽属实不够，网络压缩得太狠服务器vCPU又顶不住，又因为阿里云内网流量带宽上限够大，且不计入外网流量内，同区域内VPC内网连接即使是跨账号也不花钱，于是下定决心找服里的小伙伴各自创建账号再买(嫖)一台云服务器做转发。</p>
+<p>下面以MAIN-ECS和NAT-ECS代指两个阿里云ECS实例（实际上是7个…）：<br>
+<strong>注：百度云同账号同地域服务器默认内网互通，无需以下操作；而跨账号内网默认不通，即使是同地域也不行，必须充钱才能变得更强。</strong></p>
+<ol>
+<li>
+<p>进入阿里云Main服务器控制台，进入其所在的专有网络(VPC)，创建 <a href="https://help.aliyun.com/document_detail/64648.html" target="_blank" rel="noopener noreferrer">云企业网(CEN)</a> 并将同账号下MAIN-ECS实例加载进该云企业网，并记录下账号ID、专有网络(VPC)实例ID、云企业网(CEN)实例ID；<br>
+<img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183745.webp" alt="加载同账号VPC实例" class="lazyload"></p>
+</li>
+<li>
+<p>登新号，购买(白嫖)新ECS，选择相同地域，初始化，安全组内开放25565端口(或自行设置其他端口)，并记录下账号ID、专有网络(VPC)实例ID；</p>
+</li>
+<li>
+<p><a href="https://help.aliyun.com/document_detail/73645.html#section-mkn-v7p-lgn" target="_blank" rel="noopener noreferrer">跨账号VPC授权</a>，将NAT-ECS所在VPC 授权给 MAIN-ECS所在VPC加入的CEN；<br>
+<img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183946.webp" alt="跨账号授权入口" class="lazyload"></p>
+</li>
+<li>
+<p><a href="https://help.aliyun.com/document_detail/66001.html#d8e110" target="_blank" rel="noopener noreferrer">加载跨账号VPC实例</a>，将NAT-ECS所在VPC 加载到 MAIN-ECS所在VPC加入的CEN 中，也就是让NAT-ECS和MAIN-ECS各自所在的VPC网络实例处于同一个CEN实例内，CEN会自动配置路由规则；<br>
+<img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183955.webp" alt="加载跨账号VPC实例" class="lazyload"></p>
+</li>
+<li>
+<p>Xshell分别打开两个云服务器，互相ping对方的内网ip，ping通说明成功；</p>
+</li>
+</ol>
+<h3 id="小插曲-网段冲突">小插曲-网段冲突</h3>
+<p>在把所有VPC加入云企业网时，出现有一个VPC下的云服务器无法ping通的故障，刚开始还以为是加入云企业网的VPC实例数量达到上限了，查找过相关帮助文档后发现并没有超过限额。最后在云企业网下的路由表发现冲突项，原来是这个VPC和已经在云企业网内的另外一个VPC发生了网段冲突。</p>
+<p>解决方法：</p>
+<ol>
+<li>
+<p>记录一下所有VPC的网段，然后在发生冲突的其中一个VPC内新建同地域交换机，网段要避开已有的；<br>
+<img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108184008.webp" alt="VPC内创建新交换机" class="lazyload"></p>
+</li>
+<li>
+<p>停止ECS实例，在网络与安全组下点选修改私网ip；</p>
+</li>
+<li>
+<p>交换机选择刚刚新建的交换机，然后修改私网ip；</p>
+</li>
+<li>
+<p>重启实例，重新将该ECS实例所在VPC加入云企业网。</p>
+</li>
+</ol>
+<p>参考链接：https://yq.aliyun.com/articles/710358</p>
+<h3 id="端口转发-配置转发">端口转发-配置转发</h3>
+<p>做TCP端口转发有很多方法，可以用nginx，可以用iptables，可以用firewall，鉴于iptables配置起来比较麻烦，在Centos7下还被阉割掉了，而nginx还得装，所以这里选择用自带的firewall来做TCP端口转发。<br>
+Note：用firewall做TCP端口转发会导致Minecraft服务器无法获得玩家真实ip，如果有这方面需求的话需要使用nginx。</p>
+<ol>
+<li>
+<p>Xshell打开NAT-ECS，查看firewalld服务状态：</p>
+<pre><code class="language-shell">systemctl status firewalld
+</code></pre>
+<p>如果是dead状态，需要先开启firewalld服务：</p>
+<pre><code class="language-shell">systemctl start firewalld
+</code></pre>
+</li>
+<li>
+<p>让firewalld服务开机启动，以防止服务器意外宕机后需要重新配置：</p>
+<pre><code class="language-shell">systemctl enable firewalld.service
+</code></pre>
+</li>
+<li>
+<p>开启ip伪装功能，zone可以改：</p>
+<pre><code class="language-shell">firewall-cmd --permanent --zone=public --add-masquerade
+</code></pre>
+<p>检查是否成功：</p>
+<pre><code class="language-shell">firewall-cmd --query-masquerade
+</code></pre>
+</li>
+<li>
+<p>开放Minecraft默认使用的25565端口，如果改为其他的话服务端也需要要改：</p>
+<pre><code class="language-shell">firewall-cmd --zone=public --add-port=25565/tcp --permanent
+</code></pre>
+</li>
+<li>
+<p>端口转发：</p>
+<pre><code class="language-shell">firewall-cmd --add-forward-port=port=NAT-ECS端口(本机端口):proto=tcp:toaddr=MAIN-ECS内网ip地址(要把流量转发到的地址):toport=MAIN-ECS端口(要转发到的端口)
+</code></pre>
+<p>举个例子，开服用的MAIN-ECS的内网ip是111.111.111.111，公网ip为222.222.222.1，开服时设置的端口为25565；转发用的NAT-ECS公网ip为222.222.222.2，开启的端口是12345，则输入</p>
+<pre><code class="language-shell">firewall-cmd --add-forward-port=port=12345:proto=tcp:toaddr=111.111.111.111:toport=25565  
+</code></pre>
+</li>
+<li>
+<p>继续用上面的例子：<br>
+客户端输入 <code>222.222.222.1</code> (因为:25565是MC默认端口所以不用输入，会自动填充) 就可以直接连接到MAIN-ECS上的服务器；<br>
+客户端输入 <code>222.222.222.2:12345</code> (因为:12345不是MC默认端口，所以要自行输入) 就可以通过NAT-ECS间接连接到MAIN-ECS上的服务器。</p>
+</li>
+<li>
+<p>补充<br>
+如果想要关闭firewalld服务，输入 <code>systemctl stop firewalld</code> 即可；<br>
+如果想禁用firewalld服务开机启动，输入 <code>systemctl disable firewalld.service</code> 即可。</p>
+</li>
+</ol>
+<h3 id="服务器优化">服务器优化</h3>
+<p>略</p>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>.torrent<br>
+    <strong>本文链接：</strong><a href="https://blog.hitachimako.top/2020/mc-java-server/" title="https:&#x2F;&#x2F;blog.hitachimako.top&#x2F;2020&#x2F;mc-java-server&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;blog.hitachimako.top&#x2F;2020&#x2F;mc-java-server&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Minecraft/" rel="tag">Minecraft</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E5%8E%9F%E5%88%9B/" rel="tag">原创</a> <a class="nexmoefont icon-tag-fill -none-link" href="/tags/%E7%BD%91%E7%BB%9C/" rel="tag">网络</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <div class="valine"></div>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js'></script>
+<script>
+    // 使用方法 https://valine.js.org/quickstart.html
+    new Valine({
+        el: '.valine',
+        appId: 'YPgrWJ5taYQIc69lmg8jLT75-MdYXbMMI',
+        appKey: 'jmBDA49ahV41d4Mv9prfzSWY',
+		placeholder: '此处留言~ 填写邮箱可以接收回复提醒',
+		visitor: 'false',
+		verify: 'true',
+		recordIP: 'false',
+        requiredFields: 'nick,mail'.split(',')
+    })
+</script>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+  
+
+
+  
+    
+  
+
+
+
+  
+    
+  
+
+
+
+  
+    
+  
+
+
+
+  
+    
+  
+
+
+
+  
+    
+  
+
+
+
+  <script src="https://cdn.jsdelivr.net/combine/npm/mdui@1.0.1/dist/js/mdui.min.js,gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js,npm/lazysizes@5.3.0/lazysizes.min.js,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+
+
+<script>hljs.initHighlightingOnLoad();</script>
+
+  <script src="https://cdn.jsdelivr.net/gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
+
+<script src="/js/app.js?v=1610215051442"></script>
+
+  
+
+
+
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</body>
+
+</html>
