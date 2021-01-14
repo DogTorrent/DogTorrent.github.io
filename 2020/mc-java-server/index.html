@@ -6,7 +6,7 @@
   
   <title>Minecraft JAVA版服务器建设 - Somewhere</title>
   <meta charset="UTF-8">
-  <meta name="description" content="null">
+  <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   
   
@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183955.webp">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108184008.webp">
 <meta property="article:published_time" content="2020-02-27T04:05:25.000Z">
-<meta property="article:modified_time" content="2021-01-10T09:12:54.778Z">
+<meta property="article:modified_time" content="2021-01-10T14:18:01.663Z">
 <meta property="article:author" content=".torrent">
 <meta property="article:tag" content="原创">
 <meta property="article:tag" content="网络">
@@ -40,16 +40,11 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183715.webp">
 
-  
-  
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/mdui@1.0.1/dist/css/mdui.min.css,npm/highlight.js@10.5.0/styles/darcula.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" crossorigin>
-  
-  
-  <link rel="stylesheet" href="//at.alicdn.com/t/font_1038733_0xvrvpg9c0r.css" crossorigin>
-  
-    <link rel="stylesheet" href="//at.alicdn.com/t/font_1658687_idvsg6t2whp.css">
-  
-  <link rel="stylesheet" href="/css/style.css?v=1610273082565">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/highlight.js@10.5.0/styles/darcula.min.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" crossorigin>
+    
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" crossorigin>
+      <link rel="stylesheet" href="//at.alicdn.com/t/font_1658687_idvsg6t2whp.css">
+    <link rel="stylesheet" href="/css/style.css?v=1610646482924">
 <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Somewhere" type="application/atom+xml">
 </head>
 
@@ -242,28 +237,24 @@
 </ol>
 <h3 id="准备工作">准备工作</h3>
 <ol>
-<li>
-<p>安装 <a href="http://www.gnu.org/software/screen/" target="_blank" rel="noopener noreferrer">screen</a>；</p>
-<pre><code class="language-shell">[root@blablabla ~]# yum -y install screen
-</code></pre>
-<p>Note：screen 可以保持本地和服务器断开后，程序继续在服务器上运行，防止退出shell会话后mc服务端进程自动结束。</p>
-</li>
-<li>
-<p>安装 <a href="https://www.java.com/zh_CN/" target="_blank" rel="noopener noreferrer">Java</a>；</p>
-<pre><code class="language-shell">[root@blablabla ~]# yum -y install java-1.8.0-openjdk
+<li>安装 Screen 和 Java：<pre><code class="language-sh">yum -y install screen
+yum -y install java-1.8.0-openjdk
 </code></pre>
 </li>
+</ol>
+<p>Note：Screen 可以保持本地和服务器断开后，程序继续在服务器上运行，防止退出shell会话后mc服务端进程自动结束。</p>
+<ol start="2">
 <li>
 <p>由于服务器网络原因，本地下载Minecraft原版服务器端，用xftp丢进云服务器里；</p>
 </li>
 <li>
-<p>添加新用户minecraftserver(其实只是搭建私人小服的话不添加直接用root账户也可以)；</p>
-<pre><code class="language-shell">[root@blablabla ~]# adduser minecraftserver
+<p>添加新用户minecraftserver(其实只是搭建私人小服的话不添加直接用root账户也可以)：</p>
+<pre><code class="language-sh">adduser minecraftserver
 </code></pre>
 </li>
 <li>
-<p>设置密码；</p>
-<pre><code class="language-shell">[root@blablabla ~]# passwd minecraftserver
+<p>设置密码：</p>
+<pre><code class="language-sh">passwd minecraftserver
 </code></pre>
 </li>
 </ol>
@@ -272,7 +263,7 @@
 <li>
 <p>由于服务器网络原因，在本地下载完<strong>服务端</strong>再用Xftp丢进服务器。<br>
 <strong>Mojang原版</strong><br>
-下载链接可以在 <a href="https://minecraft-zh.gamepedia.com/" target="_blank" rel="noopener noreferrer">中文Minecraft WiKi</a> 内找到(Gamepedia速度过慢可以换用部署在Bilibili的 <a href="https://wiki.biligame.com/mc/Minecraft_Wiki" target="_blank" rel="noopener noreferrer">中文Minecraft WiKi 镜像站</a> )<br>
+下载链接可以在 <a target="_blank" rel="noopener" href="https://minecraft-zh.gamepedia.com/">中文Minecraft WiKi</a> 内找到(Gamepedia速度过慢可以换用部署在Bilibili的 <a target="_blank" rel="noopener" href="https://wiki.biligame.com/mc/Minecraft_Wiki">中文Minecraft WiKi 镜像站</a> )<br>
 单独版本的WiKi地址：https://wiki.biligame.com/mc/版本号<br>
 比如1.14.4就为：https://wiki.biligame.com/mc/1.14.4<br>
 <strong>Spigot</strong><br>
@@ -285,38 +276,29 @@ Github：https://github.com/PaperMC/Paper<br>
 </li>
 <li>
 <p>如果是原版，直接打开Xftp，连接服务器，进入新建用户minecraftserver的目录 <code>/home/minecraftserver/</code> ，把下载下来的文件 <code>server.jar</code> 丢进去；<br>
-如果是Spigot/Paperspigot，下载下来的是 <code>buildtools.jar</code> 或 <code>paper.jar</code> ，要先进行本地构建：</p>
-<pre><code class="language-shell">java -jar xxx.jar
-</code></pre>
-<p>构建完后把构建好的jar改个名字，改为 <code>server.jar</code> ，和原版一样丢进服务器。</p>
+如果是Spigot/Paperspigot，下载下来的是 <code>buildtools.jar</code> 或 <code>paper.jar</code> ，要先进行本地构建。构建完后把构建好的jar改个名字，改为 <code>server.jar</code> ，和原版一样丢进服务器。</p>
 </li>
 <li>
 <p>服务器同目录下新建脚本 <code>start.sh</code> ，填写如下的<s>玄学</s>内容：</p>
-<pre><code class="language-shell">#!/bin/sh  
+<pre><code class="language-sh">#!/bin/sh  
 screen -dmS mc java -Xms2G -Xmx2G -XX:+AggressiveOpts -XX:+UseCompressedOops -jar /home/minecraftserver/server.jar
 </code></pre>
-<p>Note 1：<a href="https://www.runoob.com/linux/linux-comm-screen.html" target="_blank" rel="noopener noreferrer">关于screen</a></p>
+<p>Note 1：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-comm-screen.html">关于screen</a></p>
 <p>Note 2：-Xms初始内存    -Xms最大内存    -XX:+AggressiveOpts引入实验性的优化    -XX:+UseCompressedOops压缩指针</p>
 </li>
 <li>
 <p>如果是在Windows下编辑，需要确保文档格式为Unix：<br>
 Notepad++修改文档格式： <code>编辑 -&gt; 文档格式转换 -&gt; 转为Unix (LF)</code><br>
 Vim修改文档格式：</p>
-<pre><code class="language-shell">cd /home/minecraftserver
+<pre><code class="language-sh">cd /home/minecraftserver
 vim start.sh
 </code></pre>
-<p>进入修改界面，键入 <code>:set ff</code>  ，最底下显示</p>
-<pre><code class="language-shell">fileformat=unix  
-</code></pre>
-<p>则正常，若显示</p>
-<pre><code class="language-shell">fileformat=dos
-</code></pre>
-<p>则需要进一步输入 <code>:set ff=unix</code> ,完事后再输入 <code>:set ff</code> 确认文档格式已为Unix，最后 <code>:wq</code> 保存退出；</p>
-<p>Note：<a href="https://www.runoob.com/linux/linux-vim.html" target="_blank" rel="noopener noreferrer">关于Vim</a></p>
+<p>进入修改界面，键入 <code>:set ff</code>  ，最底下显示 <code>fileformat=unix</code>  则正常，若显示 <code>fileformat=dos</code>，则需要进一步输入 <code>:set ff=unix</code> ,完事后再输入 <code>:set ff</code> 确认文档格式已为Unix，最后 <code>:wq</code> 保存退出；</p>
+<p>Note：<a target="_blank" rel="noopener" href="https://www.runoob.com/linux/linux-vim.html">关于Vim</a></p>
 </li>
 <li>
 <p>第一次启动，用用户minecraftserver登入，运行刚刚整好的脚本：</p>
-<pre><code class="language-shell">cd /home/minecraftserver
+<pre><code class="language-sh">cd /home/minecraftserver
 ./start.sh
 </code></pre>
 </li>
@@ -334,18 +316,18 @@ vim start.sh
 <strong>注：百度云同账号同地域服务器默认内网互通，无需以下操作；而跨账号内网默认不通，即使是同地域也不行，必须充钱才能变得更强。</strong></p>
 <ol>
 <li>
-<p>进入阿里云Main服务器控制台，进入其所在的专有网络(VPC)，创建 <a href="https://help.aliyun.com/document_detail/64648.html" target="_blank" rel="noopener noreferrer">云企业网(CEN)</a> 并将同账号下MAIN-ECS实例加载进该云企业网，并记录下账号ID、专有网络(VPC)实例ID、云企业网(CEN)实例ID；<br>
+<p>进入阿里云Main服务器控制台，进入其所在的专有网络(VPC)，创建 <a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/64648.html">云企业网(CEN)</a> 并将同账号下MAIN-ECS实例加载进该云企业网，并记录下账号ID、专有网络(VPC)实例ID、云企业网(CEN)实例ID；<br>
 <img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183745.webp" alt="加载同账号VPC实例" class="lazyload"></p>
 </li>
 <li>
 <p>登新号，购买(白嫖)新ECS，选择相同地域，初始化，安全组内开放25565端口(或自行设置其他端口)，并记录下账号ID、专有网络(VPC)实例ID；</p>
 </li>
 <li>
-<p><a href="https://help.aliyun.com/document_detail/73645.html#section-mkn-v7p-lgn" target="_blank" rel="noopener noreferrer">跨账号VPC授权</a>，将NAT-ECS所在VPC 授权给 MAIN-ECS所在VPC加入的CEN；<br>
+<p><a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/73645.html#section-mkn-v7p-lgn">跨账号VPC授权</a>，将NAT-ECS所在VPC 授权给 MAIN-ECS所在VPC加入的CEN；<br>
 <img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183946.webp" alt="跨账号授权入口" class="lazyload"></p>
 </li>
 <li>
-<p><a href="https://help.aliyun.com/document_detail/66001.html#d8e110" target="_blank" rel="noopener noreferrer">加载跨账号VPC实例</a>，将NAT-ECS所在VPC 加载到 MAIN-ECS所在VPC加入的CEN 中，也就是让NAT-ECS和MAIN-ECS各自所在的VPC网络实例处于同一个CEN实例内，CEN会自动配置路由规则；<br>
+<p><a target="_blank" rel="noopener" href="https://help.aliyun.com/document_detail/66001.html#d8e110">加载跨账号VPC实例</a>，将NAT-ECS所在VPC 加载到 MAIN-ECS所在VPC加入的CEN 中，也就是让NAT-ECS和MAIN-ECS各自所在的VPC网络实例处于同一个CEN实例内，CEN会自动配置路由规则；<br>
 <img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210108183955.webp" alt="加载跨账号VPC实例" class="lazyload"></p>
 </li>
 <li>
@@ -377,36 +359,36 @@ Note：用firewall做TCP端口转发会导致Minecraft服务器无法获得玩�
 <ol>
 <li>
 <p>Xshell打开NAT-ECS，查看firewalld服务状态：</p>
-<pre><code class="language-shell">systemctl status firewalld
+<pre><code class="language-sh">systemctl status firewalld
 </code></pre>
 <p>如果是dead状态，需要先开启firewalld服务：</p>
-<pre><code class="language-shell">systemctl start firewalld
+<pre><code class="language-sh">systemctl start firewalld
 </code></pre>
 </li>
 <li>
 <p>让firewalld服务开机启动，以防止服务器意外宕机后需要重新配置：</p>
-<pre><code class="language-shell">systemctl enable firewalld.service
+<pre><code class="language-sh">systemctl enable firewalld.service
 </code></pre>
 </li>
 <li>
 <p>开启ip伪装功能，zone可以改：</p>
-<pre><code class="language-shell">firewall-cmd --permanent --zone=public --add-masquerade
+<pre><code class="language-sh">firewall-cmd --permanent --zone=public --add-masquerade
 </code></pre>
 <p>检查是否成功：</p>
-<pre><code class="language-shell">firewall-cmd --query-masquerade
+<pre><code class="language-sh">firewall-cmd --query-masquerade
 </code></pre>
 </li>
 <li>
 <p>开放Minecraft默认使用的25565端口，如果改为其他的话服务端也需要要改：</p>
-<pre><code class="language-shell">firewall-cmd --zone=public --add-port=25565/tcp --permanent
+<pre><code class="language-sh">firewall-cmd --zone=public --add-port=25565/tcp --permanent
 </code></pre>
 </li>
 <li>
 <p>端口转发：</p>
-<pre><code class="language-shell">firewall-cmd --add-forward-port=port=NAT-ECS端口(本机端口):proto=tcp:toaddr=MAIN-ECS内网ip地址(要把流量转发到的地址):toport=MAIN-ECS端口(要转发到的端口)
+<pre><code class="language-sh">firewall-cmd --add-forward-port=port=NAT-ECS端口(本机端口):proto=tcp:toaddr=MAIN-ECS内网ip地址(要把流量转发到的地址):toport=MAIN-ECS端口(要转发到的端口)
 </code></pre>
 <p>举个例子，开服用的MAIN-ECS的内网ip是111.111.111.111，公网ip为222.222.222.1，开服时设置的端口为25565；转发用的NAT-ECS公网ip为222.222.222.2，开启的端口是12345，则输入</p>
-<pre><code class="language-shell">firewall-cmd --add-forward-port=port=12345:proto=tcp:toaddr=111.111.111.111:toport=25565  
+<pre><code class="language-sh">firewall-cmd --add-forward-port=port=12345:proto=tcp:toaddr=111.111.111.111:toport=25565  
 </code></pre>
 </li>
 <li>
@@ -467,34 +449,19 @@ Note：用firewall做TCP端口转发会导致Minecraft服务器无法获得玩�
 </div>
     </div>
   </div>
-  
-
-  <script src="https://cdn.jsdelivr.net/combine/npm/mdui@1.0.1/dist/js/mdui.min.js,gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js,npm/lazysizes@5.3.0/lazysizes.min.js,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/jquery@3.5.1/dist/jquery.slim.min.js,gh/xtaodada/xtaodada.github.io@0.0.2/copy.js"></script>
-
-<script>hljs.initHighlightingOnLoad();</script>
-<script src="/js/app.js?v=1610273082572"></script>
-
-  
-
-
-
-
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-        tex2jax: {
-            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
-            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-            processEscapes: true
-        }
-    });
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax();
-        for (var i = 0; i < all.length; ++i)
-            all[i].SourceElement().parentNode.className += ' has-jax';
-    });
+    <script src="https://cdn.jsdelivr.net/combine/npm/mdui@1.0.1/dist/js/mdui.min.js,gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js,npm/lazysizes@5.3.0/lazysizes.min.js,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+<script src="/js/ejs.min.js"></script>
+<script>
+  hljs.initHighlightingOnLoad();
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/js/app.js?v=1610646482926"></script>   
+
+  
+
+
+
+
+
 </body>
 
 </html>
