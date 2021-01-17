@@ -44,7 +44,7 @@
     
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" crossorigin>
       <link rel="stylesheet" href="//at.alicdn.com/t/font_1658687_idvsg6t2whp.css">
-    <link rel="stylesheet" href="/css/style.css?v=1610646482924">
+    <link rel="stylesheet" href="/css/style.css?v=1610866500466">
 <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Somewhere" type="application/atom+xml">
 </head>
 
@@ -75,31 +75,31 @@
     </div>
     <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="回到首页">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="首页">
             <i class="mdui-list-item-icon nexmoefont icon-home"></i>
             <div class="mdui-list-item-content">
-                回到首页
+                首页
             </div>
         </a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="文章归档">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="归档">
             <i class="mdui-list-item-icon nexmoefont icon-container"></i>
             <div class="mdui-list-item-content">
-                文章归档
+                归档
             </div>
         </a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about" title="关于博客">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about" title="关于">
             <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
             <div class="mdui-list-item-content">
-                关于博客
+                关于
             </div>
         </a>
         
-        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/PY" title="我的朋友">
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/friends" title="朋友">
             <i class="mdui-list-item-icon nexmoefont icon-unorderedlist"></i>
             <div class="mdui-list-item-content">
-                我的朋友
+                朋友
             </div>
         </a>
         
@@ -429,32 +429,41 @@ Note：用firewall做TCP端口转发会导致Minecraft服务器无法获得玩�
 
   <div class="nexmoe-post-footer">
     <section class="nexmoe-comment">
-    <div class="valine"></div>
-<script src='https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js'></script>
-<script>
-    // 使用方法 https://valine.js.org/quickstart.html
-    new Valine({
-        el: '.valine',
-        appId: 'YPgrWJ5taYQIc69lmg8jLT75-MdYXbMMI',
-        appKey: 'jmBDA49ahV41d4Mv9prfzSWY',
-		placeholder: '此处留言~ 填写邮箱可以接收回复提醒',
-		visitor: 'false',
-		verify: 'true',
-		recordIP: 'false',
-        requiredFields: 'nick,mail'.split(',')
-    })
-</script>
+    <div class="valine" id="valine"></div>
 </section>
   </div>
 </div>
     </div>
   </div>
-    <script src="https://cdn.jsdelivr.net/combine/npm/mdui@1.0.1/dist/js/mdui.min.js,gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js,npm/lazysizes@5.3.0/lazysizes.min.js,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  	<script src="https://cdn.jsdelivr.net/combine/npm/mdui@1.0.1/dist/js/mdui.min.js,gh/highlightjs/cdn-release@10.5.0/build/highlight.min.js,npm/lazysizes@5.3.0/lazysizes.min.js,npm/jquery@3.5.1/dist/jquery.slim.min.js,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/pjax@latest/pjax.min.js"></script>
 <script src="/js/ejs.min.js"></script>
 <script>
-  hljs.initHighlightingOnLoad();
+	hljs.initHighlightingOnLoad();
+	var pjax = new Pjax({
+		elements: "a[href]:not([href^='#'])", // default is "a[href], form[action]"
+		selectors: ["#nexmoe-content"]
+	})
 </script>
-<script src="/js/app.js?v=1610646482926"></script>   
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js'></script>
+<script class='pjax-reload'>
+    var option = {
+        el: '.valine',
+        appId: 'YPgrWJ5taYQIc69lmg8jLT75-MdYXbMMI',
+        appKey: 'jmBDA49ahV41d4Mv9prfzSWY',
+        placeholder: '此处留言~ 填写邮箱可以接收回复提醒',
+        visitor: false,
+        verify: true,
+        recordIP: false,
+        requiredFields: 'nick,mail'.split(','),
+        path: window.location.pathname,
+    };
+    var load_valine = function () {
+        var valine = new Valine(option);
+    };
+    load_valine();
+</script>
+<script src="/js/app.js?v=1610866500467"></script>
 
   
 
