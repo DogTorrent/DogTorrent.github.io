@@ -6,7 +6,7 @@
   <link href="https://blog.hitachimako.top/atom.xml" rel="self"/>
   
   <link href="https://blog.hitachimako.top/"/>
-  <updated>2021-01-17T09:40:39.848Z</updated>
+  <updated>2021-01-20T10:31:33.306Z</updated>
   <id>https://blog.hitachimako.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://blog.hitachimako.top/2021/hexo-fucking-diary/"/>
     <id>https://blog.hitachimako.top/2021/hexo-fucking-diary/</id>
     <published>2021-01-08T04:28:49.000Z</published>
-    <updated>2021-01-17T09:40:39.848Z</updated>
+    <updated>2021-01-20T10:31:33.306Z</updated>
     
     
     <summary type="html">简单记录一下折腾Hexo的经历</summary>
@@ -42,7 +42,7 @@
     <link href="https://blog.hitachimako.top/2020/mc-java-server/"/>
     <id>https://blog.hitachimako.top/2020/mc-java-server/</id>
     <published>2020-02-27T04:05:25.000Z</published>
-    <updated>2021-01-10T14:18:01.663Z</updated>
+    <updated>2021-01-20T10:49:23.667Z</updated>
     
     
     <summary type="html">简单记录一下MC服务器的搭建过程</summary>
@@ -53,29 +53,6 @@
     <category term="原创" scheme="https://blog.hitachimako.top/tags/%E5%8E%9F%E5%88%9B/"/>
     
     <category term="网络" scheme="https://blog.hitachimako.top/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-    <category term="Minecraft" scheme="https://blog.hitachimako.top/tags/Minecraft/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>利用Zerotier进行Minecraft联机</title>
-    <link href="https://blog.hitachimako.top/2019/mc-zerotier/"/>
-    <id>https://blog.hitachimako.top/2019/mc-zerotier/</id>
-    <published>2019-12-02T09:29:21.000Z</published>
-    <updated>2021-01-10T09:13:19.677Z</updated>
-    
-    
-    <summary type="html">记录一下尝试利用Zerotier联机的失败经历</summary>
-    
-    
-    
-    
-    <category term="原创" scheme="https://blog.hitachimako.top/tags/%E5%8E%9F%E5%88%9B/"/>
-    
-    <category term="网络" scheme="https://blog.hitachimako.top/tags/%E7%BD%91%E7%BB%9C/"/>
-    
-    <category term="Zerotier" scheme="https://blog.hitachimako.top/tags/Zerotier/"/>
     
     <category term="Minecraft" scheme="https://blog.hitachimako.top/tags/Minecraft/"/>
     

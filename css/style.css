@@ -771,7 +771,6 @@ body {
 }
 #nexmoe-header .nexmoe-list .nexmoe-list-item .mdui-list-item-content {
   margin-left: 0px;
-  transition: all 0.35s ease-out;
 }
 #nexmoe-header .nexmoe-widget-wrap {
   box-shadow: 0 0 1rem rgba(161,177,204,0.4);
@@ -801,6 +800,8 @@ body {
   position: relative;
 }
 #nexmoe-header .nexmoe-widget-wrap .nexmoe-widget ul li a {
+  overflow: hidden;
+  text-overflow: ellipsis;
   padding: 14px 10px;
   display: block;
   color: #606266;
