@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210110172347.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210117152208.png">
 <meta property="article:published_time" content="2021-01-08T04:28:49.000Z">
-<meta property="article:modified_time" content="2021-01-25T05:45:56.765Z">
+<meta property="article:modified_time" content="2021-01-25T06:27:15.925Z">
 <meta property="article:author" content=".torrent">
 <meta property="article:tag" content="原创">
 <meta property="article:tag" content="网络">
@@ -42,7 +42,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/themes/prism-okaidia.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" crossorigin>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" crossorigin>
       <link rel="stylesheet" href="//at.alicdn.com/t/font_1658687_idvsg6t2whp.css">
-    <link rel="stylesheet" href="/css/style.css?v=1611553893819">
+    <link rel="stylesheet" href="/css/style.css?v=1611570754985">
 <meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Somewhere" type="application/atom+xml">
 </head>
 
@@ -176,7 +176,7 @@
     <div class="nexmoe-copyright">
         Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
         & <a href="https://github.com/dogtorrent/hexo-theme-mako" target="_blank">Mako</a>
-        Thanks to <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+        <br />Thanks to <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
     </div>
 </div><!-- .nexmoe-drawer -->
 
@@ -387,8 +387,8 @@ hexo.extend.helper.register('combine_jsdelivr_cdn', combineJsd);
 <pre><code class="language-ejs">&lt;% var cssList = [theme.cdn[theme.highlight].css, theme.cdn.fancybox.css] -%&gt;
 &lt;%- combine_jsdelivr_cdn(cssList); %&gt;
 </code></pre>
-<p>js同理，找到 <code>after-footer.ejs</code> ，照猫画虎：</p>
-<p>（这里也不合并Prism，因为Prism-core和autoloader合并到一起时会出错）</p>
+<p>js同理，找到 <code>after-footer.ejs</code> ，照猫画虎：<br>
+（这里也不合并Prism，因为Prism-core和autoloader合并到一起时会出错）</p>
 <pre><code class="language-ejs">&lt;% 
 var jsList = [theme.cdn.mdui.js, theme.cdn.lazysizes.js, theme.cdn.jquery.js, theme.cdn.fancybox.js, theme.cdn.pjax.js];
 jsList.push.apply(jsList, theme.cdn.more.js);
@@ -671,7 +671,7 @@ document.addEventListener('pjax:complete', function()&#123;
     };
     load_valine();
 </script>
-<script src="/js/app.js?v=1611553893821"></script>
+<script src="/js/app.js?v=1611570754987"></script>
 
   
 </body>
