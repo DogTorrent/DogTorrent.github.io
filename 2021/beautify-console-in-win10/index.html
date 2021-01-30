@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+
+<html lang="zh-CN">
+
+<head>
+  
+  <title>WT+PWSH+CMD大整改 - Somewhere</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  
+  
+    <!-- Site Verification -->
+    <meta name="google-site-verification" content="qReymNBKZh-_OSv4iE8HWdCSFeSEBeDP1znAXuYZ6cU" />
+
+
+    <!-- Site Verification -->
+    <meta name="baidu-site-verification" content="vYxeMXhWdy" />
+
+  <link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210110015014.webp" type="image/webp" />
+  <meta name="description" content="我觉得这不能叫美化，应该叫正常化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="WT+PWSH+CMD大整改">
+<meta property="og:url" content="https://blog.hitachimako.top/2021/beautify-console-in-win10/">
+<meta property="og:site_name" content="Somewhere">
+<meta property="og:description" content="我觉得这不能叫美化，应该叫正常化">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210130175230.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210130181338.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210130190719.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210130201649.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210131011623.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210130231218.png">
+<meta property="article:published_time" content="2021-01-27T13:29:27.000Z">
+<meta property="article:modified_time" content="2021-01-30T17:29:51.297Z">
+<meta property="article:author" content=".torrent">
+<meta property="article:tag" content="Windows10">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210130175230.png">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/prismjs@1.23.0/themes/prism-okaidia.css,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" crossorigin>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.1/dist/css/mdui.min.css" crossorigin>
+      <link rel="stylesheet" href="//at.alicdn.com/t/font_1658687_idvsg6t2whp.css">
+    <link rel="stylesheet" href="/css/style.css?v=1612028039931">
+<meta name="generator" content="Hexo 5.3.0"><link rel="alternate" href="/atom.xml" title="Somewhere" type="application/atom+xml">
+</head>
+
+<body class="mdui-drawer-body-left">
+  
+  <div id="nexmoe-background">
+    <div class="nexmoe-bg" style="background-image: url(https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210109012311.webp)"></div>
+    <div class="mdui-appbar mdui-shadow-0">
+      <div class="mdui-toolbar">
+        <a mdui-drawer="{target: '#drawer', swipe: true}" title="menu" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon nexmoefont icon-menu"></i></a>
+        <div class="mdui-toolbar-spacer"></div>
+        <!--<a href="javascript:;" class="mdui-btn mdui-btn-icon"><i class="mdui-icon material-icons">search</i></a>-->
+        <a href="/" title=".torrent" class="mdui-btn mdui-btn-icon"><img src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210109012241.webp" alt=".torrent"></a>
+       </div>
+    </div>
+  </div>
+  <div id="nexmoe-header">
+      <div class="nexmoe-drawer mdui-drawer" id="drawer">
+    <div class="nexmoe-avatar mdui-ripple">
+        <a href="/" title=".torrent">
+            <img src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210109012241.webp" alt=".torrent" alt=".torrent">
+        </a>
+    </div>
+    <div class="nexmoe-count">
+        <div><span>文章</span>3</div>
+        <div><span>标签</span>4</div>
+        <div><span>分类</span>0</div>
+    </div>
+    <div class="nexmoe-list mdui-list" mdui-collapse="{accordion: true}">
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/" title="首页">
+            <i class="mdui-list-item-icon nexmoefont icon-home"></i>
+            <div class="mdui-list-item-content">
+                首页
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/archives" title="归档">
+            <i class="mdui-list-item-icon nexmoefont icon-container"></i>
+            <div class="mdui-list-item-content">
+                归档
+            </div>
+        </a>
+        
+        <a class="nexmoe-list-item mdui-list-item mdui-ripple" href="/about" title="关于">
+            <i class="mdui-list-item-icon nexmoefont icon-info-circle"></i>
+            <div class="mdui-list-item-content">
+                关于
+            </div>
+        </a>
+        
+    </div>
+    <aside id="nexmoe-sidebar">
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-search">
+        <form id="search_form" action_e="https://www.google.com/search?q=blog.hitachimako.top" onsubmit="return search();">
+            <label><input id="search_value" name="q" type="search" placeholder="搜索"></label>
+        </form>
+    </div>
+</div>
+  
+  <div class="nexmoe-widget-wrap">
+    <div class="nexmoe-widget nexmoe-social">
+        <a class="mdui-ripple" href="https://github.com/dogtorrent/" target="_blank" mdui-tooltip="{content: 'GitHub'}" style="color: rgb(25, 23, 23);background-color: rgba(25, 23, 23, .15);">
+            <i class="nexmoefont icon-gh"></i>
+        </a><a class="mdui-ripple" href="https://weibo.com/u/5876138569" target="_blank" mdui-tooltip="{content: '微博'}" style="color: rgb(247, 132, 34);background-color: rgba(247, 132, 34, .15);">
+            <i class="nexmoefont icon-weibo"></i>
+        </a><a class="mdui-ripple" href="https://space.bilibili.com/9333469" target="_blank" mdui-tooltip="{content: '哔哩哔哩'}" style="color: rgb(231, 106, 141);background-color: rgba(231, 106, 141, .15);">
+            <i class="nexmoefont icon-bilibili"></i>
+        </a><a class="mdui-ripple" href="https://blog.hitachimako.top/atom" target="_blank" mdui-tooltip="{content: '订阅'}" style="color: rgb(247, 132, 34);background-color: rgba(247, 132, 34, .15);">
+            <i class="nexmoefont icon-rss"></i>
+        </a>
+    </div>
+</div>
+  
+  
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <div id="randomtagcloud" class="nexmoe-widget tagcloud nexmoe-rainbow">
+      <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a> <a href="/tags/Minecraft/" style="font-size: 10px;">Minecraft</a> <a href="/tags/Windows10/" style="font-size: 10px;">Windows10</a> <a href="/tags/%E7%BD%91%E7%BB%9C/" style="font-size: 20px;">网络</a>
+    </div>
+    
+  </div>
+
+  
+  
+  <div class="nexmoe-widget-wrap">
+    <h3 class="nexmoe-widget-title">最新文章</h3>
+    <div class="nexmoe-widget">
+      <ul>
+        
+          <li>
+            <a href="/2021/beautify-console-in-win10/">WT+PWSH+CMD大整改</a>
+          </li>
+        
+          <li>
+            <a href="/2021/hexo-fucking-diary/">Hexo折腾笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2020/mc-java-server/">Minecraft JAVA版服务器建设</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+    <div class="nexmoe-author-copyright">
+        &copy; 2021 .torrent
+    </div>
+    <div class="nexmoe-copyright">
+        Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+        & <a href="https://github.com/dogtorrent/hexo-theme-mako" target="_blank">Mako</a>
+        <br />Thanks to <a href="https://github.com/theme-nexmoe/hexo-theme-nexmoe" target="_blank">Nexmoe</a>
+    </div>
+</div><!-- .nexmoe-drawer -->
+
+  </div>
+  <div id="nexmoe-content">
+    <div class="nexmoe-primary">
+        <div class="nexmoe-post">
+  
+      <div class="nexmoe-post-cover" style="padding-bottom: 56.67634252539913%;"> 
+          <img data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210130231218.png" data-sizes="auto" alt="WT+PWSH+CMD大整改" class="lazyload">
+          <h1>WT+PWSH+CMD大整改</h1>
+      </div>
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow" style="margin:10px 0!important;">
+    <a><i class="nexmoefont icon-calendar-fill"></i>2021年01月27日</a>
+    <a><i class="nexmoefont icon-areachart"></i>1.6k 字</a>
+    <a><i class="nexmoefont icon-time-circle-fill"></i>大概 7 分钟</a>
+</div>
+
+  <div class="nexmoe-post-right">
+    
+      <div class="nexmoe-fixed">
+        <div class="nexmoe-valign">
+            <div class="nexmoe-toc">
+                <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%97%E4%BD%93"><span class="toc-number">1.</span> <span class="toc-text">字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E9%A1%B5"><span class="toc-number">2.</span> <span class="toc-text">代码页</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AC%E4%B9%89%E5%BA%8F%E5%88%97"><span class="toc-number">3.</span> <span class="toc-text">转义序列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PowerShell"><span class="toc-number">4.</span> <span class="toc-text">PowerShell</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Profile"><span class="toc-number">4.1.</span> <span class="toc-text">Profile</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PowerLine"><span class="toc-number">4.2.</span> <span class="toc-text">PowerLine</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PSReadLine"><span class="toc-number">4.3.</span> <span class="toc-text">PSReadLine</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Winsows-Terminal"><span class="toc-number">5.</span> <span class="toc-text">Winsows Terminal</span></a></li></ol>
+            </div>
+        </div>
+      </div>
+    
+  </div>
+
+  <article>
+    <p>有一说一，windows自带的黑框框属实拉胯。不仅难用，还丑的一批。这两天找了个实现了弹弹play的api的python脚本，硬是给整吐了：</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210130175230.png" alt="image-20210130175207126" class="lazyload"></p>
+<p>好嘛，那就整改一下。</p>
+<p>因为直接在命令行窗口右键的话无论是默认还是当前都会有一些设置不了的项目，所以还是直接改注册表（HKEY_CURRENT_USER\Console\）来得舒服。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210130181338.png" alt="image-20210130181325435" class="lazyload"></p>
+<p>Console下的 %SystemRoot%_system32_xxx.exe、%SystemRoot%_SysWOW64_xxx.exe 分别是32和64位控制台程序（取决于xxx是什么）的注册表项，没有某些项就自己加上去完事。如果是针对所有控制台的统一设置，那就直接修改Console这一项，想细化到不同的控制台，那就分别修改对应的子项。</p>
+<h2 id="字体">字体</h2>
+<p>直接更纱黑体一步到位，但是首先排除商店内的版本，Github上的版本(<a target="_blank" rel="noopener" href="https://github.com/microsoft/cascadia-code">cascadia-code</a>)更好，安装时最好选为所有用户安装，设置FaceName（这是个字符串值）为Cascadia Code PL，这个字体之后弄powerline的时候也会需要，原本用的FireCode你可以退休了。</p>
+<table>
+<thead>
+<tr>
+<th>Font Name</th>
+<th>Includes Ligatures</th>
+<th>Includes Powerline Glyphs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cascadia Code</td>
+<td>Yes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Cascadia Mono</td>
+<td>No</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Cascadia Code PL</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Cascadia Mono PL</td>
+<td>No</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h2 id="代码页">代码页</h2>
+<p>注册表Console项（针对所有终端）下CodePage（DWORD值）设置十进制65001即可。</p>
+<p>默认的936是GBK，无法使用更纱黑体，所以直接65001(UTF-8)一步到位，省得每次都要敲一回chcp。而且如果没有设置默认65001而只是针对单个程序的话，在命令行内每敲一次回车画面都要闪烁一下，从65001(更纱黑体)→936(宋体)→65001(更纱黑体)来一次循环。</p>
+<p>不过修改之后有一件很奇妙的事，那就是一个bat文件如果直接打开它，那就是正常的按照默认值65001的代码页来的，但如果给它建一个快捷方式然后双击快捷方式打开，那就又变回原本的936了。略迷</p>
+<h2 id="转义序列">转义序列</h2>
+<p>Win32的命令行不能直接支持ansi转义序列，带了颜色代码或者加粗代码会在控制台显示出一堆乱码，除非借助一系列奇妙的方法，但自己写的时候可以勉强，用别人写的工具的时候就不太好改了。</p>
+<p>一个解决办法是使用<a target="_blank" rel="noopener" href="https://github.com/adoxa/ansicon">Ansicon</a>这样的工具，但是2021年了，显然有更好的解决方案(<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/console/console-virtual-terminal-sequences">console-virtual-terminal-sequences</a>)。</p>
+<p>在Win10某个版本之后，可以通过<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/console/setconsoletextattribute">SetConsoleTextAttribute</a>这个函数来实现让win32控制台支持ansi转义序列，如果懒得每次都这么做的话那也可以一步到位，注册表Console项（针对所有终端）下添加一个DWORD值VirtualTerminalLevel，并设为1即可。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210130190719.png" alt="image-20210130190714524" class="lazyload"></p>
+<p>参考：<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/16755142/how-to-make-win32-console-recognize-ansi-vt100-escape-sequences">How to make win32 console recognize ANSI/VT100 escape sequences?</a></p>
+<h2 id="PowerShell">PowerShell</h2>
+<h3 id="Profile">Profile</h3>
+<p>自带那个太老，新的PowerShell Core可以在商店直接安装，但是其实更推荐在Github页面(<a target="_blank" rel="noopener" href="https://github.com/PowerShell/PowerShell">PowerShell</a>)下载，因为在商店安装的话会因为没有WindowsApps文件夹的权限而无法正常修改针对所有用户的Profile文件(<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_profiles">about_profiles</a>)。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Description</th>
+<th>Path</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">All Users, All Hosts</td>
+<td>$PSHOME\Profile.ps1</td>
+</tr>
+<tr>
+<td style="text-align:left">All Users, Current Host</td>
+<td>$PSHOME\Microsoft.PowerShell_profile.ps1</td>
+</tr>
+<tr>
+<td style="text-align:left">Current User, All Hosts</td>
+<td>$Home[My ]Documents\PowerShell\Profile.ps1</td>
+</tr>
+<tr>
+<td style="text-align:left">Current user, Current Host</td>
+<td>$Home[My ]Documents\PowerShell\ Microsoft.PowerShell_profile.ps1</td>
+</tr>
+</tbody>
+</table>
+<p>这个文件其实也就是powershell每次打开时要先执行的内容，如果有什么函数/命令是需要在一打开powershell就要执行的话，写进这个文件内就可以了。</p>
+<p>要查看这些配置文件的位置，直接在powershell内输入下面的字段即可：</p>
+<table>
+<thead>
+<tr>
+<th>Description</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Current User, Current Host</td>
+<td><code>$PROFILE</code></td>
+</tr>
+<tr>
+<td>Current User, Current Host</td>
+<td><code>$PROFILE.CurrentUserCurrentHost</code></td>
+</tr>
+<tr>
+<td>Current User, All Hosts</td>
+<td><code>$PROFILE.CurrentUserAllHosts</code></td>
+</tr>
+<tr>
+<td>All Users, Current Host</td>
+<td><code>$PROFILE.AllUsersCurrentHost</code></td>
+</tr>
+<tr>
+<td>All Users, All Hosts</td>
+<td><code>$PROFILE.AllUsersAllHosts</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="PowerLine">PowerLine</h3>
+<p>详见：<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/terminal/tutorials/powerline-setup">powerline-setup</a></p>
+<p>首先确认已经有了Cascadia Code PL这个字体和Git，然后安装Posh-Git和Oh-My-Posh，这俩分别是用来获取Git信息和设置主题的：</p>
+<pre><code class="language-powershell">Install-Module posh-git
+Install-Module oh-my-posh
+</code></pre>
+<p>然后在前面说的Porfile文件（范围自选）内写入下面的内容，主题随便挑一个：</p>
+<pre><code class="language-powershell">Import-Module posh-git
+Import-Module oh-my-posh
+Set-Theme Paradox
+</code></pre>
+<p>（注：下载慢的话可以把powershellgallery.com和azureedge.net加入代理）</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210130201649.png" alt="image-20210130201644252" class="lazyload"></p>
+<h3 id="PSReadLine">PSReadLine</h3>
+<p>如果是PowerShell Core且还没有高亮的话，那就可以再加上PSReadLine，这玩意是用来高亮+一堆骚操作的：</p>
+<pre><code class="language-powershell">Install-Module PSReadLine
+</code></pre>
+<p>然后可以在前面说的Porfile文件（范围自选）内写入下面的内容，用来开启基于历史记录的预测，具体的其他配置项和快捷键可以通过 <code>Get-PSReadLineOption</code> 和 <code>Get-PSReadLineKeyHandler</code> 查看：</p>
+<pre><code class="language-powershell">Import-Module PSReadLine
+Set-PSReadLineOption -PredictionSource History
+</code></pre>
+<p>效果：</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210131011623.png" alt="image-20210131011533102" class="lazyload"></p>
+<p>（注意：Ctrl+空格显示所有候选的功能需要干掉微软自带的拼音输入法，否则快捷键会冲突）</p>
+<h2 id="Winsows-Terminal">Winsows Terminal</h2>
+<p>支持标签页+毛玻璃/亚克力+集成多终端，商店即可下载，目前没有图形化的设置界面（据说马上就会有），就是启动慢了点。</p>
+<p>右键打开设置，是个json文件，按照注释和<a target="_blank" rel="noopener" href="https://aka.ms/terminal-documentation">这里</a>的文档来配置就行。这里直接用自带的Campbell主题：</p>
+<pre><code class="language-json">......
+&quot;profiles&quot;:
+    &#123;
+        &quot;defaults&quot;:
+        &#123;
+            // Put settings here that you want to apply to all profiles.
+            &quot;acrylicOpacity&quot; : 0.7,
+            &quot;colorScheme&quot; : &quot;Campbell&quot;,
+            &quot;cursorColor&quot; : &quot;#FFFFFD&quot;,
+            &quot;fontFace&quot; : &quot;Cascadia Code PL&quot;,
+            &quot;useAcrylic&quot; : true
+        &#125;,
+        &quot;list&quot;:
+        [
+            &#123;
+                // Make changes here to the powershell.exe profile.
+                &quot;guid&quot;: &quot;&#123;bla-bla-bla-bla&#125;&quot;,
+                &quot;name&quot;: &quot;PowerShell&quot;,
+                &quot;commandline&quot;: &quot;powershell.exe&quot;,
+                &quot;hidden&quot;: false
+            &#125;,
+            &#123;
+                // Make changes here to the cmd.exe profile.
+                &quot;guid&quot;: &quot;&#123;bla-bla-bla-bla&#125;&quot;,
+                &quot;name&quot;: &quot;Command Prompt&quot;,
+                &quot;commandline&quot;: &quot;cmd.exe&quot;,
+                &quot;hidden&quot;: false
+            &#125;,
+            &#123;
+                &quot;guid&quot;: &quot;&#123;bla-bla-bla-bla&#125;&quot;,
+                &quot;name&quot;: &quot;PowerShell Core&quot;,
+                &quot;source&quot;: &quot;Windows.Terminal.PowershellCore&quot;,
+                &quot;hidden&quot;: false
+            &#125;,
+            &#123;
+                &quot;guid&quot;: &quot;&#123;bla-bla-bla-bla&#125;&quot;,
+                &quot;name&quot;: &quot;Azure Cloud Shell&quot;,
+                &quot;source&quot;: &quot;Windows.Terminal.Azure&quot;,
+                &quot;hidden&quot;: false
+            &#125;
+        ]
+    &#125;,
+......
+</code></pre>
+<p>其中useAcrylic就是毛玻璃/亚克力效果的开关，acrylicOpacity则是设置其透明度的项。</p>
+<p><img data-fancybox="gallery" data-sizes="auto" data-src="https://cdn.jsdelivr.net/gh/DogTorrent/assets@image/2021/01/20210130231218.png" alt="image-20210130231203951" class="lazyload"></p>
+<p>啊~有Konsole的感觉了~</p>
+<p>不过略怪的是，设置了毛玻璃/亚克力后，wt在前台时效果正常，一失去焦点就会变成全黑。Github上也有人提过这个issue <a target="_blank" rel="noopener" href="https://github.com/microsoft/terminal/issues/7158">#7158</a>，给出的解释是调用Win10的AcrylicBrush只能这样，除非自己重新写一套（比如Wox和Fluent Terminal），因为这样不符合Win10的相关设计规范：<a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/uwp/design/style/acrylic">design/style/acrylic</a></p>
+<p>只能等有缘人提个pr并成功合入主线后再说了…</p>
+
+  </article>
+
+  
+    
+  <div class="nexmoe-post-copyright">
+    <strong>本文作者：</strong>.torrent<br>
+    <strong>本文链接：</strong><a href="https://blog.hitachimako.top/2021/beautify-console-in-win10/" title="https:&#x2F;&#x2F;blog.hitachimako.top&#x2F;2021&#x2F;beautify-console-in-win10&#x2F;" target="_blank" rel="noopener">https:&#x2F;&#x2F;blog.hitachimako.top&#x2F;2021&#x2F;beautify-console-in-win10&#x2F;</a><br>
+    
+      <strong>版权声明：</strong>本文采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">CC BY-NC-SA 3.0 CN</a> 协议进行许可
+    
+  </div>
+
+
+  
+  
+  <div class="nexmoe-post-meta nexmoe-rainbow">
+    
+    
+        <a class="nexmoefont icon-tag-fill -none-link" href="/tags/Windows10/" rel="tag">Windows10</a>
+    
+</div>
+
+  <div class="nexmoe-post-footer">
+    <section class="nexmoe-comment">
+    <div class="valine" id="valine"></div>
+</section>
+  </div>
+</div>
+    </div>
+  </div>
+      <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+<script src="https://cdn.jsdelivr.net/combine/npm/mdui@1.0.1/dist/js/mdui.min.js,npm/lazysizes@5.3.0/lazysizes.min.js,gh/buunguyen/topbar@0.1.3/topbar.min.js,npm/jquery@3.5.1/dist/jquery.slim.min.js,gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js,npm/pjax@0.2.8/pjax.min.js,npm/prismjs@1.23.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js'></script>
+<script class='pjax-reload'>
+    var option = {
+        el: '.valine',
+        appId: 'YPgrWJ5taYQIc69lmg8jLT75-MdYXbMMI',
+        appKey: 'jmBDA49ahV41d4Mv9prfzSWY',
+        placeholder: '此处留言~ 填写邮箱可以接收回复提醒',
+        visitor: false,
+        verify: true,
+        recordIP: false,
+        requiredFields: 'nick,mail'.split(','),
+        path: window.location.pathname,
+    };
+    function load_valine() {
+        var valine = new Valine(option);
+    };
+    load_valine();
+</script>
+<script src="/js/app.js?v=1612028039932"></script>
+
+  
+</body>
+
+</html>
