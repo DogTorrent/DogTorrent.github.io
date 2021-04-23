@@ -6,7 +6,7 @@
   <link href="https://blog.hitachimako.top/atom.xml" rel="self"/>
   
   <link href="https://blog.hitachimako.top/"/>
-  <updated>2021-01-30T17:29:51.297Z</updated>
+  <updated>2021-04-23T12:45:20.011Z</updated>
   <id>https://blog.hitachimako.top/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="https://blog.hitachimako.top/2021/beautify-console-in-win10/"/>
     <id>https://blog.hitachimako.top/2021/beautify-console-in-win10/</id>
     <published>2021-01-27T13:29:27.000Z</published>
-    <updated>2021-01-30T17:29:51.297Z</updated>
+    <updated>2021-04-23T12:45:20.011Z</updated>
     
     
-    <summary type="html">我觉得这不能叫美化，应该叫正常化</summary>
+    <summary type="html">结果因为pwsh/wt启动速度过慢还是习惯性敲cmd了...</summary>
     
     
     
